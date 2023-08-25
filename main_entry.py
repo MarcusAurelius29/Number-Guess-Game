@@ -2,11 +2,32 @@ import random
 
 print("Hello, Welcome to a new game!")
 
-def generate():
+def generate1():
     n = random.randint(0 , 20)
     return n
 
-x = generate()
+def generate2():
+    n = random.randint(0 , 50)
+    return n
+
+def generate3():
+    n = random.randint(0 , 100)
+    return n
+
+print("Please select a difficulty")
+print(" Easy || Medium || Hard")
+ans = input()
+
+if(ans == 'Easy'):
+   x = generate1()
+
+elif (ans == 'Medium'):
+   x = generate2()
+
+else:
+   x = generate3()
+      
+      
 guess = 0
 
 
@@ -20,8 +41,20 @@ def func_play_game(x , guess):
       print(" Would you like to play another game? (Y/N)")
       ans = input()
       if(ans == 'Y'):
-         new_x = generate()
-         func_play_game(new_x, 0)
+         print("Please select a difficulty")
+         print(" Easy || Medium || Hard")
+         ans = input()
+
+         if(ans == 'Easy'):
+          x = generate1()
+
+         elif (ans == 'Medium'):
+          x = generate2()
+
+         else:
+          x = generate3()
+
+         func_play_game(x, 0)
       else:
          exit()
             
